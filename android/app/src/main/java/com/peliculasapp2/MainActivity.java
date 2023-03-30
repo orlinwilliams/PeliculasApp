@@ -15,6 +15,10 @@ public class MainActivity extends ReactActivity {
   protected String getMainComponentName() {
     return "PeliculasApp2";
   }
+   @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
+  }
 
   /**
    * Returns the instance of the {@link ReactActivityDelegate}. Here we use a util class {@link
