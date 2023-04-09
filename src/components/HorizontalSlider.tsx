@@ -4,10 +4,10 @@ import MovieImage from './MovieImage'
 import { Movie } from '../interfaces/movieInterface';
 
 interface Props {
-    data: Movie[];    
+    data: Movie[];
     title: string,
     width?: number;
-    height?:number;
+    height?: number;
 }
 
 export const HorizontalSlider = ({ data, title, height = 200, width = 150 }: Props) => {
@@ -19,11 +19,11 @@ export const HorizontalSlider = ({ data, title, height = 200, width = 150 }: Pro
                 showsHorizontalScrollIndicator={false}
                 horizontal={true}
                 renderItem={({ item }) => (
-                    < MovieImage movie={item} height={height} width={width}/>
+                    < MovieImage movie={item} height={height} width={width} />
 
                 )}
                 keyExtractor={item => item.id.toString()}
-                
+
             />
         </View>
     )
@@ -31,14 +31,13 @@ export const HorizontalSlider = ({ data, title, height = 200, width = 150 }: Pro
 
 const styles = StyleSheet.create({
     title: {
-      fontSize:14,
-      fontWeight:'bold',
-      marginBottom:5
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginBottom: 5
     },
-    container:{
-        marginTop:5,
-        marginBottom:12
+    container: {
+        marginTop: 5,
+        marginBottom: 12
 
-    }    
-  });
-  
+    }
+});

@@ -38,7 +38,6 @@ export const HomeScreen = ({ navigation }: Props) => {
       </View>
      
       <HorizontalSlider data={peliculasEnCine} title="Populares"/>
-      <HorizontalSlider data={peliculasEnCine} title="Populares"/>
 
     </ScrollView>
   );
