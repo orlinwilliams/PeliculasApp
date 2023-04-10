@@ -1,30 +1,37 @@
 import React from 'react';
 import {View, Image, StyleSheet, TouchableOpacity} from 'react-native';
 import {Movie} from '../interfaces/movieInterface';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { useNavigation } from '@react-navigation/core';
-
+import {StackNavigationProp} from '@react-navigation/stack';
+import {useNavigation} from '@react-navigation/core';
+import {stackParams} from '../navigator/Navigation';
 
 interface Props {
   movie: Movie;
   width?: number;
-  height?:number;
+  height?: number;
 }
 
-export type RootStackParamList = {
-  Detail: { movie: Movie } | undefined;
-};
+// export type RootStackParamList = {
+//   Detail: { movie: Movie } | undefined;
+// };
 
 const MovieImage = ({movie, height = 410, width = 300}: Props) => {
-  const uri = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;  
-  
-  const natigation = useNavigation<StackNavigationProp<RootStackParamList>>();
-  
+  const uri = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+
+  //const natigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+  const natigation = useNavigation<StackNavigationProp<stackParams>>();
+
   return (
-    <TouchableOpacity    
-      onPress={ ()=>natigation.navigate('Detail', {movie}) }
-    activeOpacity={0.8}
-    style={{height,width}}>
+    <TouchableOpacity
+      onPress={() => natigation.navigate('Detail', movie)}
+      activeOpacity={0.8}
+      style={{
+        height,
+        width,
+        marginHorizontal: 1,
+        paddingBottom: 15,
+        paddingHorizontal: 7,
+      }}>
       <View style={styles.card}>
         <Image
           source={{
@@ -37,9 +44,9 @@ const MovieImage = ({movie, height = 410, width = 300}: Props) => {
   );
 };
 
-const styles = StyleSheet.create({  
+const styles = StyleSheet.create({
   card: {
-    flex:1,
+    flex: 1,
     borderRadius: 15,
     shadowColor: '#000',
     shadowOffset: {
@@ -49,8 +56,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.32,
     shadowRadius: 5.46,
     elevation: 6,
-    marginRight:10
-    
+    marginRight: 8,
   },
   image: {
     flex: 1,
