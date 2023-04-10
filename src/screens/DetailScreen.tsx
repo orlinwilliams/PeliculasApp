@@ -1,7 +1,12 @@
+import { StackScreenProps } from '@react-navigation/stack'
 import React from 'react'
 import { View } from 'react-native'
 
-export const DetailScreen = () => {
+interface Props extends StackScreenProps<any, any>{}{
+
+}
+export const DetailScreen = ({route}:Props) => {
+  console.log(route.params);
   
   return (
     <View>

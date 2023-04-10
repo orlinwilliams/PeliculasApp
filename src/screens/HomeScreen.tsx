@@ -1,6 +1,6 @@
 import { StackScreenProps } from '@react-navigation/stack';
 import React, { useEffect } from 'react';
-import { View, Text, Button, Dimensions, ScrollView, FlatList } from 'react-native';
+import { View, Dimensions, ScrollView } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Carousel from 'react-native-snap-carousel';
 import Loading from '../components/Loading';
@@ -14,7 +14,7 @@ interface Props extends StackScreenProps<any, any> { }
 export const HomeScreen = ({ navigation }: Props) => {
 
   const { top } = useSafeAreaInsets();
-  const { peliculasEnCine, loading } = useMovies();
+  const { nowPlaying, popular, toRated, upcoming, loading } = useMovies();
 
   if (loading) {
     return (
@@ -29,7 +29,7 @@ export const HomeScreen = ({ navigation }: Props) => {
           height: 440,
         }}>
           <Carousel
-            data={peliculasEnCine}
+            data={nowPlaying}
             renderItem={({ item }) => < MovieImage movie={item} />}
             sliderWidth={windowWidth}
             itemWidth={300}
@@ -37,7 +37,9 @@ export const HomeScreen = ({ navigation }: Props) => {
         </View>
       </View>
      
-      <HorizontalSlider data={peliculasEnCine} title="Populares"/>
+      <HorizontalSlider data={popular} title="Populares"/>
+      <HorizontalSlider data={toRated} title="Top Rated"/>
+      <HorizontalSlider data={upcoming} title="Upcoming"/>
 
     </ScrollView>
   );
