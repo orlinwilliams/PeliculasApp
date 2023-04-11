@@ -33,7 +33,8 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 20,
         fontWeight: 'bold',
-        marginBottom: 5
+        marginBottom: 5,
+        color:'black',
     },
     container: {
         marginTop: 5,

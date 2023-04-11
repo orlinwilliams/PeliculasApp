@@ -7,6 +7,7 @@ import Loading from '../components/Loading';
 import MovieImage from '../components/MovieImage';
 import { useMovies } from '../hooks/useMovies';
 import { HorizontalSlider } from '../components/HorizontalSlider';
+import { GradientBackground } from '../components/GradientBackground';
 
 const { width: windowWidth } = Dimensions.get('window');
 interface Props extends StackScreenProps<any, any> { }
@@ -23,6 +24,9 @@ export const HomeScreen = ({ navigation }: Props) => {
   }
 
   return (
+
+    <GradientBackground>
+    
     <ScrollView>
       <View style={{ marginTop: top + 10 }}>
         <View style={{
@@ -42,5 +46,6 @@ export const HomeScreen = ({ navigation }: Props) => {
       <HorizontalSlider data={upcoming} title="Upcoming"/>
 
     </ScrollView>
+    </GradientBackground>
   );
 };
