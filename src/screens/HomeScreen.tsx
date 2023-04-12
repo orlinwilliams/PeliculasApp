@@ -25,8 +25,7 @@ export const HomeScreen = () => {
     setColorMain({
       primary,
       secondary,
-    });
-    console.log(primary, secondary);
+    });    
   };
 
   useEffect(() => {
@@ -41,7 +40,7 @@ export const HomeScreen = () => {
   }
 
   return (
-    <GradientBackground>
+    <GradientBackground >
       <ScrollView>
         <View style={{marginTop: top + 10}}>
           <View
