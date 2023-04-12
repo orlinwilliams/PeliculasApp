@@ -8,7 +8,7 @@ export const useFade = () => {
     // Will change opacity value to 1 in 5 seconds
     Animated.timing(opacity, {
       toValue: 1,
-      duration: 500,
+      duration: 200,
       useNativeDriver: true,
     }).start( () => callback ? callback() : null);
   };
@@ -17,7 +17,7 @@ export const useFade = () => {
     // Will change opacity value to 0 in 3 seconds
     Animated.timing(opacity, {
       toValue: 0,
-      duration: 500,
+      duration: 100,
       useNativeDriver: true,
     }).start();
   };
